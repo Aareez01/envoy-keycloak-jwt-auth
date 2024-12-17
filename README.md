@@ -1,4 +1,3 @@
-Here's the complete, revised documentation with detailed explanations, examples, and the curl commands for manually testing Keycloak and Envoy integration:
 
 ---
 
@@ -137,5 +136,3 @@ If you have any questions or need further assistance, feel free to reach out!
 2. **Detailed Steps**: Added clear and concise steps for manual testing using cURL.
 3. **Configuration**: Included more detailed information on what each component (Keycloak, Envoy, Server) does.
 4. **Additional Explanations**: Broke down how each component fits into the overall authentication flow. 
-
-This version should provide a clearer understanding of how everything works together. Let me know if you need further adjustments!
