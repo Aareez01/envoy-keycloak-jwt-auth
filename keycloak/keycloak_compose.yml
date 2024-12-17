@@ -11,7 +11,7 @@ services:
       - 5432:5432
   keycloak:
     image: keycloak/keycloak
-    command: start-dev
+    command: start-dev --import-realm --verbose
     environment:
       DB_VENDOR: postgres
       DB_ADDR: postgres
@@ -21,16 +21,16 @@ services:
       DB_SCHEMA: public
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
-      KEYCLOAK_IMPORT: /tmp/real-export.json
+      KEYCLOAK_IMPORT: /opt/keycloak/data/import/realm-config.json
     volumes:
       - type: bind
-        source: ./realm-export.json
-        target: /tmp/real-export.json
+        source: ./realm-config.json
+        target: /opt/keycloak/data/import/realm-config.json
         read_only: true
     ports:
       - target: 8080
         published: ${KEYCLOAK_PUBLISHED_PORT}
         protocol: tcp
         mode: host
-    #depends_on:
-    #  - postgres
+    depends_on:
+      - postgres
