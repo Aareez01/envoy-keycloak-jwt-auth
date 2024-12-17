@@ -16,7 +16,7 @@ This pattern allows the server to be free of any authentication logic, enabling 
 This POC uses a fully Dockerized environment. To set up and start the environment, run the following command in your terminal:
 
 ```bash
-docker-compose --env-file config\.env up -d
+docker-compose --env-file config/.env up -d
 ```
 
 ### This command will set up the following components:
